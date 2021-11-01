@@ -40,14 +40,14 @@ public class ApplianceDAOImpl implements ApplianceDAO {
     }
 
     private Appliance getApplianceIfMatch(Map<String, Object> expectedCriteriaParams, Element appliancesElement) throws IOException, JDOMException {
-        Map<String, Object> elementParams = ApplianceStoreCatalogWithParams.createFullWare(appliancesElement);
+        Map<String, Object> elementParams = ApplianceStoreCatalogWithParams.createFullDescription(appliancesElement);
 
-        Set<String> keys = expectedCriteriaParams.keySet();
-        for (String s : keys) { //todo: переименовать
-            Object ob1 = expectedCriteriaParams.get(s); //todo: переименовать
-            Object ob2 = elementParams.get(s);
+        Set<String> keysExpected = expectedCriteriaParams.keySet();
+        for (String s : keysExpected) {
+            Object expectedValue = expectedCriteriaParams.get(s);
+            Object currentElementValue = elementParams.get(s);
 
-            if (!ob1.equals(ob2)) {
+            if (!expectedValue.equals(currentElementValue)) {
                 return null;
             }
         }

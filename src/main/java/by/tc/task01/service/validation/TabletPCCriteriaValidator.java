@@ -23,7 +23,7 @@ public class TabletPCCriteriaValidator {
             return (flashMemoryCapacity >= 2) && (flashMemoryCapacity <= 8);
         } else if (tabletPCParams.containsKey("COLOR")) {
             String color = (String) tabletPCParams.get("COLOR");
-            return (color == "blue") || (color == "red") || (color == "green");//todo: с цветом ничего не работает
+            return (color.equals("BLUE")) || (color.equals("RED")) || (color.equals("GREEN"));//todo: с цветом ничего не работает
         } else {
             return false;
         }

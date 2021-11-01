@@ -9,7 +9,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class ApplianceStoreCatalogWithParams {
-    public static Map<String, Object> createFullWare(Element applianceElement) throws IOException, JDOMException {
+    public static Map<String, Object> createFullDescription(Element applianceElement) throws IOException, JDOMException {
         String type = applianceElement.getChildText("type");
         Map<String, Object> fullMap = new HashMap<>();
         fullMap.put("type", type);

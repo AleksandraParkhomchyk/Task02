@@ -28,10 +28,10 @@ public class Matcher {
         matchList.put("MEMORY_ROM", "memory-rom");
         matchList.put("SYSTEM_MEMORY", "systemMemory");
         matchList.put("CPU", "cpu");
-        matchList.put("DISPLAY_INCHES", "displayInches");
+        matchList.put("DISPLAY_INCHES", "display-inches");
 
-        matchList.put("FREEZER_CAPACITY", "freezerCapacity");
-        matchList.put("OVERALL_CAPACITY", "overallCapacity");
+        matchList.put("FREEZER_CAPACITY", "freezer-capacity");
+        matchList.put("OVERALL_CAPACITY", "overall-capacity");
 
         matchList.put("FILTER_TYPE", "filterType");
         matchList.put("BAG_TYPE", "bagTpe");
@@ -53,13 +53,16 @@ public class Matcher {
 
         Map<String, Object> params = criteria.getCriteria();
         Map<String, Object> newParams = new HashMap<>();
-        Set<Map.Entry<String, Object>> set = params.entrySet();
-        for (Map.Entry<String, Object> stringObjectEntry : set) {
-            String key = stringObjectEntry.getKey();
-            String newKey = Matcher.getXmlTagName(key);
-            Object value = stringObjectEntry.getValue();
+        String type = criteria.getGroupSearchName();
+
+        Set<String> keysFromParams = params.keySet();
+        for (String s : keysFromParams) {
+            String newKey = Matcher.getXmlTagName(s);
+            Object value = params.get(s);
             newParams.put(newKey, value);
         }
+
+        newParams.put("type", type);
         return newParams;
     }
 }
