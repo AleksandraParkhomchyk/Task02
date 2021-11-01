@@ -45,7 +45,7 @@ public class ApplianceDAOImpl implements ApplianceDAO {
         Set<String> keys = expectedCriteriaParams.keySet();
         for (String s : keys) { //todo: переименовать
             Object ob1 = expectedCriteriaParams.get(s); //todo: переименовать
-            Object ob2 = elementParams.get(s); //todo : переименовать
+            Object ob2 = elementParams.get(s);
 
             if (!ob1.equals(ob2)) {
                 return null;
