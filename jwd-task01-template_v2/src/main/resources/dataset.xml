@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+    <appliance id="1">
+        <type>Oven</type>
+        <power-consumption>1000</power-consumption>
+        <weight>10</weight>
+        <capacity>32</capacity>
+        <depth>60</depth>
+        <height>45.5</height>
+        <width>59.5</width>
+    </appliance>
+    <appliance id="2">
+        <type>Oven</type>
+        <power-consumption>1500</power-consumption>
+        <weight>12</weight>
+        <capacity>33</capacity>
+        <depth>60</depth>
+        <height>45</height>
+        <width>68</width>
+    </appliance>
+    <appliance id="3">
+        <type>Oven</type>
+        <power-consumption>2000</power-consumption>
+        <weight>11</weight>
+        <capacity>33</capacity>
+        <depth>60</depth>
+        <height>40</height>
+        <width>70</width>
+    </appliance>
+    <appliance id="4">
+        <type>Laptop</type>
+        <battery-capacity>1</battery-capacity>
+        <os>Windows</os>
+        <memory-rom>4000</memory-rom>
+        <system-memory>1000</system-memory>
+        <cpu>1.2</cpu>
+        <display-inches>18</display-inches>
+    </appliance>
+    <appliance id="5">
+        <type>Laptop</type>
+        <battery-capacity>1.5</battery-capacity>
+        <os>Linux</os>
+        <memory-rom>8000</memory-rom>
+        <system-memory>1000</system-memory>
+        <cpu>2.2</cpu>
+        <display-inches>19</display-inches>
+    </appliance>
+    <appliance id="6">
+        <type>Laptop</type>
+        <battery-capacity>3</battery-capacity>
+        <os>Windows</os>
+        <memory-rom>8000</memory-rom>
+        <system-memory>1500</system-memory>
+        <cpu>3.2</cpu>
+        <display-inches>22</display-inches>
+    </appliance>
+    <appliance id="7">
+        <type>Refrigerator</type>
+        <power-consumption>100</power-consumption>
+        <weight>20</weight>
+        <freezer-capacity>10</freezer-capacity>
+        <overall-capacity>300</overall-capacity>
+        <height>200</height>
+        <width>70</width>
+    </appliance>
+    <appliance id="8">
+        <type>Refrigerator</type>
+        <power-consumption>200</power-consumption>
+        <weight>30</weight>
+        <freezer-capacity>15</freezer-capacity>
+        <overall-capacity>300</overall-capacity>
+        <height>180</height>
+        <width>80</width>
+    </appliance>
+    <appliance id="9">
+        <type>Refrigerator</type>
+        <power-consumption>150</power-consumption>
+        <weight>35</weight>
+        <freezer-capacity>20</freezer-capacity>
+        <overall-capacity>350.5</overall-capacity>
+        <height>250</height>
+        <width>75</width>
+    </appliance>
+    <appliance id="10">
+        <type>VacuumCleaner</type>
+        <power-consumption>100</power-consumption>
+        <filter-type>A</filter-type>
+        <bag-type>A2</bag-type>
+        <wand-type>all-in-one</wand-type>
+        <motor-speed-regulation>3000</motor-speed-regulation>
+        <cleaning-width>20</cleaning-width>
+    </appliance>
+    <appliance id="11">
+        <type>VacuumCleaner</type>
+        <power-consumption>110</power-consumption>
+        <filter-type>B</filter-type>
+        <bag-type>AA-89</bag-type>
+        <wand-type>all-in-one</wand-type>
+        <motor-speed-regulation>2900</motor-speed-regulation>
+        <cleaning-width>25</cleaning-width>
+    </appliance>
+    <appliance id="12">
+        <type>VacuumCleaner</type>
+        <power-consumption>90</power-consumption>
+        <filter-type>C</filter-type>
+        <bag-type>XX00</bag-type>
+        <wand-type>all-in-one</wand-type>
+        <motor-speed-regulation>2950</motor-speed-regulation>
+        <cleaning-width>30</cleaning-width>
+    </appliance>
+    <appliance id="13">
+        <type>TabletPC</type>
+        <battery-capacity>3</battery-capacity>
+        <display-inches>14</display-inches>
+        <memory-rom>8000</memory-rom>
+        <flash-memory-capacity>2</flash-memory-capacity>
+        <color>blue</color>
+    </appliance>
+    <appliance id="14">
+        <type>TabletPC</type>
+        <battery-capacity>4</battery-capacity>
+        <display-inches>15</display-inches>
+        <memory-rom>8000</memory-rom>
+        <flash-memory-capacity>6</flash-memory-capacity>
+        <color>red</color>
+    </appliance>
+    <appliance id="15">
+        <type>TabletPC</type>
+        <battery-capacity>5</battery-capacity>
+        <display-inches>16</display-inches>
+        <memory-rom>16000</memory-rom>
+        <flash-memory-capacity>8</flash-memory-capacity>
+        <name>COLOR</name>
+        <color>green</color>
+    </appliance>
+    <appliance id="16">
+        <type>Speakers</type>
+        <power-consumption>15</power-consumption>
+        <number-of-speakers>2</number-of-speakers>
+        <frequency-range>2-4</frequency-range>
+        <cord-length>2</cord-length>
+    </appliance>
+    <appliance id="17">
+        <type>Speakers</type>
+        <power-consumption>20</power-consumption>
+        <number-of-speakers>3</number-of-speakers>
+        <frequency-range>3-4</frequency-range>
+        <cord-length>3</cord-length>
+    </appliance>
+    <appliance id="18">
+        <type>Speakers</type>
+        <power-consumption>17</power-consumption>
+        <number-of-speakers>4</number-of-speakers>
+        <frequency-range>2-3.5</frequency-range>
+        <cord-length>4</cord-length>
+    </appliance>
+</dataset>
