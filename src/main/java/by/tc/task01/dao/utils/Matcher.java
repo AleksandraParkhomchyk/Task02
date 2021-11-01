@@ -23,28 +23,28 @@ public class Matcher {
         matchList.put("HEIGHT", "height");
         matchList.put("WIDTH", "width");
 
-        matchList.put("BATTERY_CAPACITY", "batteryCapacity");
+        matchList.put("BATTERY_CAPACITY", "battery-capacity");
         matchList.put("OS", "os");
         matchList.put("MEMORY_ROM", "memory-rom");
-        matchList.put("SYSTEM_MEMORY", "systemMemory");
+        matchList.put("SYSTEM_MEMORY", "system-memory");
         matchList.put("CPU", "cpu");
         matchList.put("DISPLAY_INCHES", "display-inches");
 
         matchList.put("FREEZER_CAPACITY", "freezer-capacity");
         matchList.put("OVERALL_CAPACITY", "overall-capacity");
 
-        matchList.put("FILTER_TYPE", "filterType");
-        matchList.put("BAG_TYPE", "bagTpe");
-        matchList.put("WAND_TYPE", "wandType");
-        matchList.put("MOTOR_SPEED_REGULATION", "motorSpeedRegulation");
-        matchList.put("CLEANING_WIDTH", "cleaningWidth");
+        matchList.put("FILTER_TYPE", "filter-type");
+        matchList.put("BAG_TYPE", "bag-type");
+        matchList.put("WAND_TYPE", "wand-type");
+        matchList.put("MOTOR_SPEED_REGULATION", "motor-speed-regulation");
+        matchList.put("CLEANING_WIDTH", "cleaning-width");
 
         matchList.put("FLASH_MEMORY_CAPACITY", "flash-memory-capacity");
         matchList.put("COLOR", "color");
 
-        matchList.put("NUMBER_OF_SPEAKERS", "numberOfSpeakers");
-        matchList.put("FREQUENCY_RANGE", "frequencyRange");
-        matchList.put("CORD_LENGTH", "cordLength");
+        matchList.put("NUMBER_OF_SPEAKERS", "number-of-speakers");
+        matchList.put("FREQUENCY_RANGE", "frequency-range");
+        matchList.put("CORD_LENGTH", "cord-length");
 
         return matchList;
     }

@@ -26,6 +26,7 @@ public class ApplianceStoreCatalogWithParams {
             Laptop laptop = new Laptop(id, batteryCapacity, memoryRom, systemMemory, displayInches, OS, cpu);
             fullMap.put("id", id);
             fullMap.put("battery-capacity", batteryCapacity);
+            fullMap.put("memory-rom", memoryRom);
             fullMap.put("system-memory", systemMemory);
             fullMap.put("display-inches", displayInches);
             fullMap.put("os", OS);
@@ -101,7 +102,7 @@ public class ApplianceStoreCatalogWithParams {
 
             fullMap.put("id", id);
             fullMap.put("battery-capacity", batteryCapacity);
-            fullMap.put("displayInches", displayInches);
+            fullMap.put("display-inches", displayInches);
             fullMap.put("memory-rom", memoryRom);
             fullMap.put("flash-memory-capacity", flashMemoryCapacity);
             fullMap.put("color", color);
