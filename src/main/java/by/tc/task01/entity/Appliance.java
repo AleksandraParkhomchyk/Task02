@@ -1,20 +1,19 @@
 package by.tc.task01.entity;
 
 public abstract class Appliance {
-	private int id;
+    private Integer id;
 
 
-    public Appliance(int id) {
+    public Appliance(Integer id) {
         this.id = id;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
-    public abstract String applianceType();
 }

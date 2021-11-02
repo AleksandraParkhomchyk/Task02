@@ -9,6 +9,8 @@ import by.tc.task01.service.ApplianceService;
 import by.tc.task01.service.validation.BaseValidator;
 import org.jdom2.JDOMException;
 
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.TransformerException;
 import java.io.IOException;
 import java.util.List;
 
@@ -22,7 +24,7 @@ public class ApplianceServiceImpl implements ApplianceService{
 	 * @throws JDOMException
 	 */
 	@Override
-	public List<Appliance> find(Criteria criteria) throws IOException, JDOMException {
+	public List<Appliance> find(Criteria criteria) throws IOException, JDOMException, ParserConfigurationException, TransformerException, NoSuchFieldException {
 		if (!BaseValidator.criteriaValidator(criteria)) {
 			return null;
 		}

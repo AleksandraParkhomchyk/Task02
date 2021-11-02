@@ -9,7 +9,7 @@ public class VacuumCleanerCriteriaValidator {
     public static boolean validate(Criteria criteria) {
         Map<String, Object> vacuumCleanerParams = criteria.getCriteria();
 
-        if (vacuumCleanerParams.containsKey("POWER_CONSUMPTION")) {
+        /*if (vacuumCleanerParams.containsKey("POWER_CONSUMPTION")) {
             Integer powerConsumption = (Integer.parseInt(String.valueOf(vacuumCleanerParams.get("POWER_CONSUMPTION"))));
             return (powerConsumption >= 90) && (powerConsumption <= 110);
         } else if (vacuumCleanerParams.containsKey("FILTER_TYPE")) {
@@ -29,7 +29,8 @@ public class VacuumCleanerCriteriaValidator {
             return (cleaningWidth >= 20) && (cleaningWidth <= 30);
         } else {
 
-            return false;
-        }
+            return false;*/
+        //
+        return true;
     }
 }

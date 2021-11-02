@@ -78,9 +78,5 @@ public class TabletPC extends Appliance{
                 ", color='" + color + '\'' +
                 '}';
     }
-    @Override
-    public String applianceType() {
-        String type = "TabletPC";
-        return type;
-    }
+
 }

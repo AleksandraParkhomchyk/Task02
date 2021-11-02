@@ -88,9 +88,5 @@ public class VacuumCleaner extends Appliance{
                 ", wandType='" + wandType + '\'' +
                 '}';
     }
-    @Override
-    public String applianceType() {
-        String type = "VacuumCleaner";
-        return type;
-    }
+
 }

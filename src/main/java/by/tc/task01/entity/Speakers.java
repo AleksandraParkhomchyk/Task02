@@ -68,9 +68,5 @@ public class Speakers extends Appliance{
                 ", frequencyRange='" + frequencyRange + '\'' +
                 '}';
     }
-    @Override
-    public String applianceType() {
-        String type = "Speakers";
-        return type;
-    }
+
 }

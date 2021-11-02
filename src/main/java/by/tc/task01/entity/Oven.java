@@ -6,7 +6,7 @@ public class Oven extends Appliance{
     private int powerConsumption, weight, capacity, depth;
     private double height, width;
 
-    public Oven(int id, int powerConsumption, int weight, int capacity, int depth, double height, double width) {
+    public Oven(int id, Integer powerConsumption, int weight, int capacity, int depth, double height, double width) {
         super(id);
         this.powerConsumption = powerConsumption;
         this.weight = weight;
@@ -88,9 +88,5 @@ public class Oven extends Appliance{
                 ", width=" + width +
                 '}';
     }
-    @Override
-    public String applianceType() {
-        String type = "Oven";
-        return type;
-    }
+
 }

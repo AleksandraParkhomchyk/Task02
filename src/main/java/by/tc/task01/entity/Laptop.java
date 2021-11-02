@@ -90,9 +90,4 @@ public class Laptop extends Appliance {
                 '}';
     }
 
-    @Override
-    public String applianceType() {
-        String type = "Laptop";
-        return type;
-    }
 }

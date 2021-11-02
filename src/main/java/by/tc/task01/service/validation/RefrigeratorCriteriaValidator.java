@@ -9,7 +9,7 @@ public class RefrigeratorCriteriaValidator {
     public static boolean validate(Criteria criteria) {
         Map<String, Object> refrigeratorParams = criteria.getCriteria();
 
-        if (refrigeratorParams.containsKey("POWER_CONSUMPTION")) {
+        /*if (refrigeratorParams.containsKey("POWER_CONSUMPTION")) {
             Integer powerConsumption = (Integer.parseInt(String.valueOf(refrigeratorParams.get("POWER_CONSUMPTION"))));
             return (powerConsumption >= 100) && (powerConsumption <= 200);
         } else if (refrigeratorParams.containsKey("WEIGHT")) {
@@ -28,7 +28,8 @@ public class RefrigeratorCriteriaValidator {
             Integer width = (Integer.parseInt(String.valueOf(refrigeratorParams.get("WIDTH"))));
             return (width >= 70) && (width <= 80);
         } else {
-            return false;
-        }
+            return false;*/
+        // }
+        return true;
     }
 }

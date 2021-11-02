@@ -8,7 +8,7 @@ public class SpeakersCriteriaValidator {
     public static boolean validate(Criteria criteria) {
         Map<String, Object> speakersParams = criteria.getCriteria();
 
-        if (speakersParams.containsKey("POWER_CONSUMPTION")) {
+        /*if (speakersParams.containsKey("POWER_CONSUMPTION")) {
             Integer powerConsumption = (Integer.parseInt(String.valueOf(speakersParams.get("POWER_CONSUMPTION"))));
             return (powerConsumption >= 15) && (powerConsumption <= 20);
         } else if (speakersParams.containsKey("NUMBER_OF_SPEAKERS")) {
@@ -22,6 +22,7 @@ public class SpeakersCriteriaValidator {
             return (cordLength >= 2) && (cordLength <= 4);
         } else {
             return false;
-        }
+        }*/
+        return true;
     }
 }

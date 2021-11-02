@@ -9,7 +9,7 @@ public class TabletPCCriteriaValidator {
     public static boolean validate(Criteria criteria) {
         Map<String, Object> tabletPCParams = criteria.getCriteria();
 
-        if (tabletPCParams.containsKey("BATTERY_CAPACITY")) {
+        /*if (tabletPCParams.containsKey("BATTERY_CAPACITY")) {
             Integer batteryCapacity = (Integer.parseInt(String.valueOf(tabletPCParams.get("BATTERY_CAPACITY"))));
             return (batteryCapacity >= 3) && (batteryCapacity <= 5);
         } else if (tabletPCParams.containsKey("DISPLAY_INCHES")) {
@@ -23,9 +23,10 @@ public class TabletPCCriteriaValidator {
             return (flashMemoryCapacity >= 2) && (flashMemoryCapacity <= 8);
         } else if (tabletPCParams.containsKey("COLOR")) {
             String color = (String) tabletPCParams.get("COLOR");
-            return (color.equals("BLUE")) || (color.equals("RED")) || (color.equals("GREEN"));//todo: с цветом ничего не работает
+            return (color.equals("BLUE")) || (color.equals("RED")) || (color.equals("GREEN"));
         } else {
             return false;
-        }
+        }*/
+        return true;
     }
 }

@@ -2,8 +2,8 @@ package by.tc.task01.entity;
 
 import java.util.Objects;
 
-public class Refrigerator extends Appliance{
-	private int powerConsumption, weight, freezerCapacity, height, width;
+public class Refrigerator extends Appliance {
+    private int powerConsumption, weight, freezerCapacity, height, width;
     private double overallCapacity;
 
     public Refrigerator(int id, int powerConsumption, int weight, int freezerCapacity, int height, int width, double overallCapacity) {
@@ -88,9 +88,5 @@ public class Refrigerator extends Appliance{
                 ", overallCapacity=" + overallCapacity +
                 '}';
     }
-    @Override
-    public String applianceType() {
-        String type = "Refrigerator";
-        return type;
-    }
+
 }

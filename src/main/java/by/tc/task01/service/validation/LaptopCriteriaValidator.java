@@ -9,7 +9,7 @@ public class LaptopCriteriaValidator {
     public static boolean validate(Criteria criteria) {
         Map<String, Object> laptopParams = criteria.getCriteria();
 
-        if (laptopParams.containsKey("BATTERY_CAPACITY")) {
+        /*if (laptopParams.containsKey("BATTERY_CAPACITY")) {
             Double batteryCapacity = (Double.parseDouble(String.valueOf(laptopParams.get("BATTERY_CAPACITY"))));
             return (batteryCapacity >= 1) && (batteryCapacity <= 3);
         } else if (laptopParams.containsKey("OS")) {
@@ -29,6 +29,6 @@ public class LaptopCriteriaValidator {
             return (displayInches >= 18) && (displayInches <= 22);
         } else {
             return false;
-        }
+        }*/return true;
     }
-}
+    }
