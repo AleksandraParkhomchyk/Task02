@@ -2,13 +2,11 @@ package by.tc.task01.dao.utils;
 
 import by.tc.task01.entity.*;
 import org.jdom2.Element;
-import org.jdom2.JDOMException;
 
-import java.io.IOException;
 
 public class ApplianceFactory {
 
-    public static Appliance createAppliance(Element applianceElement) throws IOException, JDOMException {
+    public static Appliance createAppliance(Element applianceElement) {
 
         String type = applianceElement.getChildText("type");
 

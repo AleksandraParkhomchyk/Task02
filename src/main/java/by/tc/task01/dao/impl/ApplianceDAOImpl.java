@@ -1,6 +1,7 @@
 package by.tc.task01.dao.impl;
 
 import by.tc.task01.dao.ApplianceDAO;
+import by.tc.task01.dao.DaoException;
 import by.tc.task01.dao.utils.*;
 import by.tc.task01.entity.Appliance;
 import by.tc.task01.entity.criteria.Criteria;
@@ -9,52 +10,56 @@ import org.jdom2.Element;
 import org.jdom2.JDOMException;
 import org.jdom2.input.SAXBuilder;
 
-import javax.xml.parsers.ParserConfigurationException;
-import javax.xml.transform.TransformerException;
 import java.io.IOException;
 import java.util.*;
 
 
 public class ApplianceDAOImpl implements ApplianceDAO {
     @Override
-    public List<Appliance> find(Criteria criteria) throws IOException, JDOMException, ParserConfigurationException, TransformerException, NoSuchFieldException, IllegalAccessException {
+    public List<Appliance> find(Criteria criteria) throws DaoException{
         List<Appliance> resultList = new ArrayList<>();
-        Map<String, Object> expectedParams = Matcher.matchingParams(criteria);
+        try {
 
-        SAXBuilder builder = new SAXBuilder();
-        Document document = builder.build("E:\\Tr\\Task02\\src\\main\\resources\\dataset.xml");
+            Map<String, Object> expectedParams = Matcher.matchingParams(criteria);
 
-        Element root = document.getRootElement();
-        List<Element> appliances = root.getChildren("appliance");
-        Iterator<Element> appliancesIterator = appliances.iterator();
+            SAXBuilder builder = new SAXBuilder();
+            Document document = builder.build("E:\\Tr\\Task02\\src\\main\\resources\\dataset.xml");
 
-        while (appliancesIterator.hasNext()) {
-            Element appliancesElement = appliancesIterator.next();
-            Appliance appliance = getApplianceIfMatch(expectedParams, appliancesElement);
+            Element root = document.getRootElement();
+            List<Element> appliances = root.getChildren("appliance");
+            Iterator<Element> appliancesIterator = appliances.iterator();
 
-            if (appliance != null) {
-                resultList.add(appliance);
+            while (appliancesIterator.hasNext()) {
+                Element appliancesElement = appliancesIterator.next();
+                Appliance appliance = getApplianceIfMatch(expectedParams, appliancesElement);
 
+                if (appliance != null) {
+                    resultList.add(appliance);
+                }
             }
+        } catch (IOException | JDOMException e) {
+            throw new RuntimeException(e);
         }
         return resultList;
     }
 
-    private Appliance getApplianceIfMatch(Map<String, Object> expectedCriteriaParams, Element appliancesElement) throws IOException, JDOMException, ParserConfigurationException, TransformerException, NoSuchFieldException, IllegalAccessException {
-        Map<String, Object> elementParams = ApplianceStoreCatalogWithParams.createFullDescription(appliancesElement);
+    private Appliance getApplianceIfMatch(Map<String, Object> expectedCriteriaParams, Element appliancesElement) {
 
-        Set<String> keysExpected = expectedCriteriaParams.keySet();
-        for (String s : keysExpected) {
-            Object expectedValue = expectedCriteriaParams.get(s);
-            Object currentElementValue = elementParams.get(s);
+            Map<String, Object> elementParams = ApplianceStoreCatalogWithParams.createFullDescription(appliancesElement);
 
-            if (!expectedValue.equals(currentElementValue)) {
-                return null;
+            Set<String> keysExpected = expectedCriteriaParams.keySet();
+            for (String s : keysExpected) {
+                Object expectedValue = expectedCriteriaParams.get(s);
+                Object currentElementValue = elementParams.get(s);
+
+                if (!expectedValue.equals(currentElementValue)) {
+                    return null;
+                }
             }
-        }
-        Appliance appliance = ApplianceFactory.createAppliance(appliancesElement);
+            Appliance appliance = ApplianceFactory.createAppliance(appliancesElement);
 
-        return appliance;
+            return appliance;
+
     }
 }
 

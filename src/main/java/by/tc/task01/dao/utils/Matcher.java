@@ -1,9 +1,7 @@
 package by.tc.task01.dao.utils;
 
 import by.tc.task01.entity.criteria.Criteria;
-import org.jdom2.JDOMException;
 
-import java.io.IOException;
 import java.util.*;
 
 public class Matcher {
@@ -49,7 +47,7 @@ public class Matcher {
         return matchList;
     }
 
-    public static Map<String, Object> matchingParams(Criteria criteria) throws IOException, JDOMException {
+    public static Map<String, Object> matchingParams(Criteria criteria){
 
         Map<String, Object> params = criteria.getCriteria();
         Map<String, Object> newParams = new HashMap<>();
