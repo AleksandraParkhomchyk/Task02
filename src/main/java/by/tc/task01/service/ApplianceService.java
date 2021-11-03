@@ -17,6 +17,6 @@ public interface ApplianceService {
 	 * @throws IOException
 	 * @throws JDOMException
 	 */
-	List<Appliance> find(Criteria criteria) throws IOException, JDOMException, ParserConfigurationException, TransformerException, NoSuchFieldException;
+	List<Appliance> find(Criteria criteria) throws IOException, JDOMException, ParserConfigurationException, TransformerException, NoSuchFieldException, IllegalAccessException;
 	
 }

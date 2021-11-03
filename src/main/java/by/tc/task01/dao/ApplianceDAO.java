@@ -10,5 +10,5 @@ import java.io.IOException;
 import java.util.List;
 
 public interface ApplianceDAO {
-	List<Appliance> find(Criteria criteria) throws IOException, JDOMException, ParserConfigurationException, TransformerException, NoSuchFieldException;
+	List<Appliance> find(Criteria criteria) throws IOException, JDOMException, ParserConfigurationException, TransformerException, NoSuchFieldException, IllegalAccessException;
 }

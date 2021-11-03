@@ -1,12 +1,9 @@
 package by.tc.task01.dao.impl;
 
 import by.tc.task01.dao.ApplianceDAO;
-import by.tc.task01.dao.utils.ApplianceStoreCatalogWithParams;
-import by.tc.task01.dao.utils.DocumentSaver;
-import by.tc.task01.dao.utils.Matcher;
+import by.tc.task01.dao.utils.*;
 import by.tc.task01.entity.Appliance;
 import by.tc.task01.entity.criteria.Criteria;
-import by.tc.task01.dao.utils.ApplianceFactory;
 import org.jdom2.Document;
 import org.jdom2.Element;
 import org.jdom2.JDOMException;
@@ -20,7 +17,7 @@ import java.util.*;
 
 public class ApplianceDAOImpl implements ApplianceDAO {
     @Override
-    public List<Appliance> find(Criteria criteria) throws IOException, JDOMException, ParserConfigurationException, TransformerException, NoSuchFieldException {
+    public List<Appliance> find(Criteria criteria) throws IOException, JDOMException, ParserConfigurationException, TransformerException, NoSuchFieldException, IllegalAccessException {
         List<Appliance> resultList = new ArrayList<>();
         Map<String, Object> expectedParams = Matcher.matchingParams(criteria);
 
@@ -43,7 +40,7 @@ public class ApplianceDAOImpl implements ApplianceDAO {
         return resultList;
     }
 
-    private Appliance getApplianceIfMatch(Map<String, Object> expectedCriteriaParams, Element appliancesElement) throws IOException, JDOMException, ParserConfigurationException, TransformerException, NoSuchFieldException {
+    private Appliance getApplianceIfMatch(Map<String, Object> expectedCriteriaParams, Element appliancesElement) throws IOException, JDOMException, ParserConfigurationException, TransformerException, NoSuchFieldException, IllegalAccessException {
         Map<String, Object> elementParams = ApplianceStoreCatalogWithParams.createFullDescription(appliancesElement);
 
         Set<String> keysExpected = expectedCriteriaParams.keySet();
@@ -56,7 +53,7 @@ public class ApplianceDAOImpl implements ApplianceDAO {
             }
         }
         Appliance appliance = ApplianceFactory.createAppliance(appliancesElement);
-        DocumentSaver.saveApplianceInXML(appliance);
+
         return appliance;
     }
 }
