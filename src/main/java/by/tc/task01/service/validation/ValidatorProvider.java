@@ -2,11 +2,15 @@ package by.tc.task01.service.validation;
 
 import by.tc.task01.entity.criteria.Criteria;
 
-import java.util.Map;
+/**
+ * ValidatorProvider class
+ */
+public final class ValidatorProvider {
 
-public final class BaseValidator {
-
-
+    /**
+     * @param criteria
+     * @return returns true if criteria valid. Otherwise, returns false
+     */
     public static boolean criteriaValidator(Criteria criteria) {
         String currentGroupSearchName = criteria.getGroupSearchName();
 
@@ -23,7 +27,7 @@ public final class BaseValidator {
         } else if (currentGroupSearchName.equals("Speakers")) {
             return SpeakersCriteriaValidator.validate(criteria);
         } else {
-            return NoApplianceTypeValidator.validate();
+            return ValidatorNoType.validate();
         }
     }
 }

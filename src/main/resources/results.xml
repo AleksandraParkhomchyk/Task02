@@ -1,21 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <matches-the-request>
     <appliance>
-        <powerConsumption>1500</powerConsumption>
-        <weight>12</weight>
-        <capacity>33</capacity>
-        <depth>60</depth>
-        <height>45.0</height>
-        <width>68.0</width>
-        <type>Oven</type>
-    </appliance>
-    <appliance>
-        <powerConsumption>2000</powerConsumption>
-        <weight>11</weight>
-        <capacity>33</capacity>
-        <depth>60</depth>
-        <height>40.0</height>
-        <width>70.0</width>
-        <type>Oven</type>
+        <powerConsumption>100</powerConsumption>
+        <motorSpeedRegulation>3000</motorSpeedRegulation>
+        <cleaningWidth>20</cleaningWidth>
+        <filterType>A</filterType>
+        <bagType>A2</bagType>
+        <wandType>all-in-one</wandType>
+        <type>VacuumCleaner</type>
     </appliance>
 </matches-the-request>

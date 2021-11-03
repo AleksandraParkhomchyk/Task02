@@ -29,9 +29,9 @@ public class DocumentSaver {
         Element matchesTheRequest = document.createElement("matches-the-request");
 
         for (Appliance appliance : appliances) {
-        paramsReadAndWrite(appliance, document, matchesTheRequest);
-
+            paramsReadAndWrite(appliance, document, matchesTheRequest);
         }
+        
         document.appendChild(matchesTheRequest);
         TransformerFactory transformerFactory = TransformerFactory.newInstance();
         Transformer transformer = transformerFactory.newTransformer();

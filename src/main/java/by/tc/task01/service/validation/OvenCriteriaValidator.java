@@ -7,6 +7,9 @@ import by.tc.task01.entity.criteria.Criteria;
 import java.util.Map;
 import java.util.Set;
 
+/**
+ * OvenCriteriaValidator class
+ */
 public class OvenCriteriaValidator {
 
     public static boolean validate(Criteria criteria) {
