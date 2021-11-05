@@ -8,6 +8,6 @@ import java.util.List;
 
 public interface ApplianceService {
 
-    List<Appliance> find(Criteria criteria) throws DaoException, ServiceException;
+    List<Appliance> find(Criteria criteria) throws ServiceException;
 
 }

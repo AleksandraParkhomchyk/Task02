@@ -44,7 +44,7 @@ public class DocumentSaver {
             transformer.transform(source, result);
 
         } catch (TransformerException | ParserConfigurationException | IOException e) {
-            throw new RuntimeException(e);
+            throw new DaoException(e);
         }
     }
 
@@ -76,7 +76,7 @@ public class DocumentSaver {
             applianceFound.appendChild(type);
 
         } catch (NoSuchFieldException | IllegalAccessException e) {
-            throw new RuntimeException(e);
+            throw new DaoException(e);
         }
     }
 }

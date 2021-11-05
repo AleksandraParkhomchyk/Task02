@@ -14,7 +14,7 @@ import java.util.List;
 
 public class Main {
 
-    public static void main(String[] args) throws DaoException, ServiceException {
+    public static void main(String[] args) throws ServiceException {
         List<Appliance> appliances;
         ServiceFactory factory = ServiceFactory.getInstance();
         ApplianceService service = factory.getApplianceService();

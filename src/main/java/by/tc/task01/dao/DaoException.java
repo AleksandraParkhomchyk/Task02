@@ -10,11 +10,15 @@ public class DaoException extends Exception{
         super(message);
     }
 
-    public DaoException(Exception e){
+    /*public DaoException(Exception e){
         super(e);
-    }
+    }*/
 
     public DaoException(String message, Exception e){
         super(message, e);
+    }
+
+    public DaoException(Throwable cause){
+        super(cause);
     }
 }

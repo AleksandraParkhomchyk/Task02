@@ -48,7 +48,7 @@ public class ApplianceDAOImpl implements ApplianceDAO {
                 }
             }
         } catch (IOException | JDOMException e) {
-            throw new RuntimeException(e);
+            throw new DaoException(e);
         }
         return resultList;
     }

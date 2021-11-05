@@ -25,10 +25,13 @@ public class ApplianceServiceImpl implements ApplianceService {
      * @throws JDOMException
      */
     @Override
-    public List<Appliance> find(Criteria criteria) throws ServiceException, DaoException {
-        if (!ValidatorProvider.criteriaValidator(criteria)) {
-            return null;
-        }
+    public List<Appliance> find(Criteria criteria) throws ServiceException {
+
+        try {
+
+            if (!ValidatorProvider.criteriaValidator(criteria)) {
+                return null;
+            }
 
             DAOFactory factory = DAOFactory.getInstance();
             ApplianceDAO applianceDAO = factory.getApplianceDAO();
@@ -39,6 +42,8 @@ public class ApplianceServiceImpl implements ApplianceService {
 
             return appliance;
 
-
+        } catch (DaoException e) {
+            throw new ServiceException(e);
+        }
     }
 }
