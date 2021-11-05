@@ -4,6 +4,8 @@ import by.tc.task01.entity.Oven;
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
+import org.junit.runner.RunWith;
+import org.junit.runners.Suite;
 
 /**
  * Unit test for simple App.
@@ -19,7 +21,9 @@ public class AppTest
         super(testName);
     }
 
+    @org.junit.Test
     public void test_oven_default_constructor() {
+
         Oven testClass = new Oven(5, 5, 5, 5, 5, 5, 5);
 
         assertEquals(5, testClass.getPowerConsumption());
@@ -35,13 +39,17 @@ public class AppTest
      * @return the suite of tests being tested
      */
     public static Test suite() {
-        return new TestSuite(AppTest.class);
+
+        TestSuite suite = new TestSuite(AppTest.class);
+        suite.addTest(new TestSuite(AppTest.class));
+        return suite;
     }
 
     /**
      * Rigourous Test :-)
      */
     public void testApp() {
+                
         assertTrue(true);
     }
 }

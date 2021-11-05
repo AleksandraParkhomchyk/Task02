@@ -4,6 +4,9 @@ import by.tc.task01.entity.criteria.Criteria;
 
 import java.util.*;
 
+/**
+ * Matcher class
+ */
 public class Matcher {
     public final static HashMap<String, String> matchListNew = fillInMatchingMap();
 
@@ -47,6 +50,12 @@ public class Matcher {
         return matchList;
     }
 
+    /**
+     * Creates map with description of appliance, changes names of parameters corresponding xml tags
+     *
+     * @param criteria
+     * @return {@link Map}
+     */
     public static Map<String, Object> matchingParams(Criteria criteria){
 
         Map<String, Object> params = criteria.getCriteria();

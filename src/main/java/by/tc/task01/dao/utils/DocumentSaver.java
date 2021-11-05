@@ -16,6 +16,9 @@ import java.io.IOException;
 import java.lang.reflect.Field;
 import java.util.List;
 
+/**
+ * DocumentSaver class
+ */
 public class DocumentSaver {
 
     public static void saveDoc(List<Appliance> appliances) throws DaoException {

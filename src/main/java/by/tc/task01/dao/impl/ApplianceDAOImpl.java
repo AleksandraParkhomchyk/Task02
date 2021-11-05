@@ -13,10 +13,20 @@ import org.jdom2.input.SAXBuilder;
 import java.io.IOException;
 import java.util.*;
 
+/**
+ * ApplianceDAOImpl class
+ * Implements {@link ApplianceDAO}
+ *
+ */
 
 public class ApplianceDAOImpl implements ApplianceDAO {
+    /**
+     * Creates list of suitable appliances
+     *
+     * @return list of suitable appliances
+     */
     @Override
-    public List<Appliance> find(Criteria criteria) throws DaoException{
+    public List<Appliance> find(Criteria criteria) throws DaoException {
         List<Appliance> resultList = new ArrayList<>();
         try {
 
@@ -45,20 +55,20 @@ public class ApplianceDAOImpl implements ApplianceDAO {
 
     private Appliance getApplianceIfMatch(Map<String, Object> expectedCriteriaParams, Element appliancesElement) {
 
-            Map<String, Object> elementParams = ApplianceStoreCatalogWithParams.createFullDescription(appliancesElement);
+        Map<String, Object> elementParams = ApplianceWithDescription.createFullDescription(appliancesElement);
 
-            Set<String> keysExpected = expectedCriteriaParams.keySet();
-            for (String s : keysExpected) {
-                Object expectedValue = expectedCriteriaParams.get(s);
-                Object currentElementValue = elementParams.get(s);
+        Set<String> keysExpected = expectedCriteriaParams.keySet();
+        for (String s : keysExpected) {
+            Object expectedValue = expectedCriteriaParams.get(s);
+            Object currentElementValue = elementParams.get(s);
 
-                if (!expectedValue.equals(currentElementValue)) {
-                    return null;
-                }
+            if (!expectedValue.equals(currentElementValue)) {
+                return null;
             }
-            Appliance appliance = ApplianceFactory.createAppliance(appliancesElement);
+        }
+        Appliance appliance = ApplianceFactory.createAppliance(appliancesElement);
 
-            return appliance;
+        return appliance;
 
     }
 }

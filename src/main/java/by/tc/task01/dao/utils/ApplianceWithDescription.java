@@ -3,22 +3,21 @@ package by.tc.task01.dao.utils;
 import by.tc.task01.entity.*;
 import org.jdom2.Element;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
- * ApplianceFactory class
- *
+ * ApplianceWithDescription class
  */
-public class ApplianceFactory {
-
-
+public class ApplianceWithDescription {
     /**
-     * Creates an appliance
-     *
      * @param {@link Element}
-     * @return {@link Appliance} specific appliance
+     * @return map with full description of appliance(groupsearchname, parameters and values)
      */
-    public static Appliance createAppliance(Element applianceElement) {
-
+    public static Map<String, Object> createFullDescription(Element applianceElement) {
         String type = applianceElement.getChildText("type");
+        Map<String, Object> fullMap = new HashMap<>();
+        fullMap.put("type", type);
 
         if (type.equals("Laptop")) {
 
@@ -30,8 +29,14 @@ public class ApplianceFactory {
             String OS = applianceElement.getChildText("os");
             Double cpu = Double.parseDouble(applianceElement.getChildText("cpu"));
             Laptop laptop = new Laptop(id, batteryCapacity, memoryRom, systemMemory, displayInches, OS, cpu);
+            fullMap.put("id", id);
+            fullMap.put("battery-capacity", batteryCapacity);
+            fullMap.put("memory-rom", memoryRom);
+            fullMap.put("system-memory", systemMemory);
+            fullMap.put("display-inches", displayInches);
+            fullMap.put("os", OS);
+            fullMap.put("cpu", cpu);
 
-            return laptop;
 
         } else if (type.equals("Oven")) {
 
@@ -44,7 +49,13 @@ public class ApplianceFactory {
             Double width = Double.parseDouble(applianceElement.getChildText("width"));
             Oven oven = new Oven(id, powerConsumption, weight, capacity, depth, height, width);
 
-            return oven;
+            fullMap.put("id", id);
+            fullMap.put("power-consumption", powerConsumption);
+            fullMap.put("weight", weight);
+            fullMap.put("capacity", capacity);
+            fullMap.put("depth", depth);
+            fullMap.put("height", height);
+            fullMap.put("width", width);
 
         } else if (type.equals("Refrigerator")) {
 
@@ -57,7 +68,13 @@ public class ApplianceFactory {
             Double overallCapacity = Double.parseDouble(applianceElement.getChildText("overall-capacity"));
             Refrigerator refrigerator = new Refrigerator(id, powerConsumption, weight, freezerCapacity, height, width, overallCapacity);
 
-            return refrigerator;
+            fullMap.put("id", id);
+            fullMap.put("power-consumption", powerConsumption);
+            fullMap.put("weight", weight);
+            fullMap.put("freezer-capacity", freezerCapacity);
+            fullMap.put("height", height);
+            fullMap.put("width", width);
+            fullMap.put("overall-capacity", overallCapacity);
 
         } else if (type.equals("VacuumCleaner")) {
 
@@ -70,7 +87,13 @@ public class ApplianceFactory {
             String wandType = applianceElement.getChildText("wand-type");
             VacuumCleaner vacuumCleaner = new VacuumCleaner(id, powerConsumption, motorSpeedRegulation, cleaningWidth, filterType, bagType, wandType);
 
-            return vacuumCleaner;
+            fullMap.put("id", id);
+            fullMap.put("power-consumption", powerConsumption);
+            fullMap.put("motor-speed-regulation", motorSpeedRegulation);
+            fullMap.put("cleaning-width", cleaningWidth);
+            fullMap.put("filter-type", filterType);
+            fullMap.put("bag-type", bagType);
+            fullMap.put("wand-type", wandType);
 
         } else if (type.equals("TabletPC")) {
 
@@ -82,7 +105,12 @@ public class ApplianceFactory {
             String color = applianceElement.getChildText("color");
             TabletPC tabletPC = new TabletPC(id, batteryCapacity, memoryRom, flashMemoryCapacity, displayInches, color);
 
-            return tabletPC;
+            fullMap.put("id", id);
+            fullMap.put("battery-capacity", batteryCapacity);
+            fullMap.put("display-inches", displayInches);
+            fullMap.put("memory-rom", memoryRom);
+            fullMap.put("flash-memory-capacity", flashMemoryCapacity);
+            fullMap.put("color", color);
 
         } else if (type.equals("Speakers")) {
 
@@ -93,12 +121,14 @@ public class ApplianceFactory {
             String frequencyRange = applianceElement.getChildText("frequency-range");
             Speakers speakers = new Speakers(id, powerConsumption, numberOfSpeakers, cordLength, frequencyRange);
 
-            return speakers;
+            fullMap.put("id", id);
+            fullMap.put("power-consumption", powerConsumption);
+            fullMap.put("number-of-speakers", numberOfSpeakers);
+            fullMap.put("frequency-range", frequencyRange);
+            fullMap.put("cord-length", cordLength);
+
         }
-        return null;
+
+        return fullMap;
     }
 }
-
-
-
-
