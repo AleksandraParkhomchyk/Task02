@@ -21,6 +21,8 @@ import java.util.List;
  */
 public class DocumentSaver {
 
+    private static final String FILENAME = "src\\main\\resources\\result.xml";
+
     public static void saveDoc(List<Appliance> appliances) throws DaoException {
         try {
             DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
@@ -38,7 +40,7 @@ public class DocumentSaver {
             Transformer transformer = transformerFactory.newTransformer();
 
             DOMSource source = new DOMSource(document);
-            StreamResult result = new StreamResult(new FileWriter("E:\\Tr\\Task02\\src\\main\\resources\\results.xml"));
+            StreamResult result = new StreamResult(new FileWriter(FILENAME));//("E:\\Tr\\Task02\\src\\main\\resources\\results.xml"));
 
             transformer.setOutputProperty(OutputKeys.INDENT, "yes");
             transformer.transform(source, result);

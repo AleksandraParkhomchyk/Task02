@@ -10,13 +10,13 @@ import org.jdom2.Element;
 import org.jdom2.JDOMException;
 import org.jdom2.input.SAXBuilder;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.*;
 
 /**
  * ApplianceDAOImpl class
  * Implements {@link ApplianceDAO}
- *
  */
 
 public class ApplianceDAOImpl implements ApplianceDAO {
@@ -25,15 +25,18 @@ public class ApplianceDAOImpl implements ApplianceDAO {
      *
      * @return list of suitable appliances
      */
+
+    private static final String FILENAME = "src\\main\\resources\\dataset.xml";
+
     @Override
     public List<Appliance> find(Criteria criteria) throws DaoException {
+
         List<Appliance> resultList = new ArrayList<>();
         try {
 
             Map<String, Object> expectedParams = Matcher.matchingParams(criteria);
-
             SAXBuilder builder = new SAXBuilder();
-            Document document = builder.build("E:\\Tr\\Task02\\src\\main\\resources\\dataset.xml");
+            Document document = builder.build(new File(FILENAME));//("E:\\Tr\\Task02\\src\\main\\resources\\dataset.xml");
 
             Element root = document.getRootElement();
             List<Element> appliances = root.getChildren("appliance");
