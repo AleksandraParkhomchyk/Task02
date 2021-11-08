@@ -12,6 +12,7 @@ import org.jdom2.input.SAXBuilder;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.*;
 
 /**
@@ -26,7 +27,7 @@ public class ApplianceDAOImpl implements ApplianceDAO {
      * @return list of suitable appliances
      */
 
-    private static final String FILENAME = "src\\main\\resources\\dataset.xml";
+    private final InputStream inputStream = getClass().getResourceAsStream("/dataset.xml");
 
     @Override
     public List<Appliance> find(Criteria criteria) throws DaoException {
@@ -36,7 +37,7 @@ public class ApplianceDAOImpl implements ApplianceDAO {
 
             Map<String, Object> expectedParams = Matcher.matchingParams(criteria);
             SAXBuilder builder = new SAXBuilder();
-            Document document = builder.build(new File(FILENAME));//("E:\\Tr\\Task02\\src\\main\\resources\\dataset.xml");
+            Document document = builder.build(inputStream);
 
             Element root = document.getRootElement();
             List<Element> appliances = root.getChildren("appliance");
